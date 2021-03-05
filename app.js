@@ -9,8 +9,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let summationMatrix=[];
+let summation;
 function sum(a, b) { //eslint-disable-line
   summationMatrix.push(a+b);
+  summation=a+b;
   summationMatrix.push('The sum of ' +a +' and '+b +' is ' +(a+b)+'.');
   return summationMatrix;
 }
@@ -30,9 +32,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let multiplicationMatrix=[];
+let multiple;
 function multiply(a, b) { //eslint-disable-line
   multiplicationMatrix.push(a*b);
   multiplicationMatrix.push('The product of ' +a +' and '+b +' is ' +(a*b)+'.');
+  multiple=a*b;
   return multiplicationMatrix;
 }
 
@@ -53,12 +57,22 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
+let addMultiply=[];
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  sum(a,b);
+  sum(summation,c);
+  multiply(a,b);
+  multiply(multiple,c);
+  // multiple=multiplicationMatrix[0];
+  addMultiply.push(summation);
+  addMultiply.push(multiple);
+  addMultiply.push(a+' and '+b +' and '+c + ' sum to ' + addMultiply[0]+'.');
+  addMultiply.push('The product of '+a +' and '+b+ ' and '+c +' is '+ addMultiply[1]+'.');
+  return addMultiply;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
